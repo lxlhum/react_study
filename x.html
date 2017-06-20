@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+       
+        //写JSX必须使用"text/babel"的形式 ，并且JSX还可以放在独立的.js文件中
+        var i = 1; 
+        var myStyle = { fontSize: 32, color: '#FF0000' }; 
+        //可以使用内联样式表来进行css渲染 
+        var arr = [
+        <h1>苍天已死</h1>,
+        <h2>黄巾当立</h2>];
+         //还可以插入数组
+
+         ReactDOM.render(
+             /*标签里的注释要使用花括号，标签外的不需要使用花括号*/
+        <div>
+            <h1 style={myStyle}>30分钟学React</h1>
+            <h2>欢迎学习 React</h2>
+            {/* 支持 js表达式 */}
+            <h1>{1+1}</h1>
+            <h1>{i == 1 ? 'True!' : 'False'}</h1>
+            {/*不支持if-else的形式*/}
+            <p data-myattribute="somevalue">这是一个很不错的 JavaScript 库!</p>
+            {/*实例中的 p 元素添加了自定义属性 data-myattribute，添加自定义属性需要使用 data- 前缀。
+            event.target.getAttribute("data-myattribute")获取*/}
+            <div>{arr}</div>
+        </div>
+        , document.getElementById('example') );
+    </script>
+</body>
+
+</html>
